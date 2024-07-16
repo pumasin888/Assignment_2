@@ -4,90 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 2 Document</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            border-left: 10px solid #0073e6;
+        }
+        h1, h3 {
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #0073e6;
+        }
+        h3 {
+            font-size: 1.8em;
+            color: #005bb5;
+        }
+        h5 {
+            color: #005bb5;
+            margin-top: 20px;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        p {
+            margin: 10px 0;
+            color: #555;
+            font-size: 1.3em;
+            line-height: 1.8;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: #c7254e;
+        }
+        img {
+            max-width: 65%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .task {
+            margin-bottom: 40px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 5px solid #0073e6;
+            border-radius: 5px;
+        }
+        .task:nth-child(even) {
+            background: #eef7ff;
+        }
+        .container::before {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
 </head>
 <body>
-    <h1>Assignments: 2024-07-12 Document.</h1>
-    <div>
-        <h3>Task 1: Installation of Arduino IDE software on an Ubuntu VM.</h3>
-        <div>
-            <h5>1.1 Install the Arduino IDE on the Ubuntu VM.</h5>
-            <img src="./public/download_arduinoIDE.png" alt="download_arduinoIDE">
-            <p>We install Arduino using App center. And the version that we install is 1.8.19 because it is the lastest version.</p>
+    <div class="container">
+        <h1>Assignments: 2024-07-12 Document</h1>
+        
+        <div class="task">
+            <h3>Task 1: Installation of Arduino IDE software on an Ubuntu VM</h3>
+            <div>
+                <h5>1.1 Install the Arduino IDE on the Ubuntu VM</h5>
+                <img src="./public/download_arduinoIDE.png" alt="download_arduinoIDE">
+                <p>We install Arduino using App center. The version installed is 1.8.19, the latest version.</p>
+                <img src="./public/config_usb_port.png" alt="config_usb_port">
+                <p>Next, configure your USB port on the VMware to allow it to use your USB port. If you don't, you will encounter a problem where the VMware can't detect your Arduino. Upon connecting with the Arduino, the "Arduino Srl Arduino Uno [0001]" should appear.</p>
+            </div>
+            <div>
+                <h5>1.2 Open the Arduino IDE and open the Blink sketch from the Arduino Examples</h5>
+                <img src="./public/task1_try_blink.png" alt="task1_try_blink">
+                <p>Now, test your Arduino using the Blink sketch example from Arduino.</p>
+            </div>
+            <div>
+                <h5>1.3 Select an Arduino board as the target, such as Arduino Uno or Nano</h5>
+                <img src="./public/select_port.png" alt="select_port">
+                <p>Select the Arduino board you are using. In this case, it is Arduino Uno. Also, specify the port that it is connected to.</p>
+            </div>
+            <div>
+                <h5>1.4 Build the Arduino sketch example</h5>
+                <img src="./public/building_blink.png" alt="building_blink">
+                <p>Build and verify the code you will upload to your Arduino by clicking the verify button.</p>
+            </div>
+            <div>
+                <h5>1.6 Upload the compiled Arduino sketch to the Arduino board</h5>
+                <video width="700" height="500" controls="controls">
+                    <source src="./public/task1_blink_result.mp4" type="video/mp4">
+                </video>
+                <p>Finally, upload your code to the Arduino board. Click the upload button (the arrow pointing to the right). If everything is correct, the orange LED on the Arduino board should start blinking!</p>
+            </div>
         </div>
-        <div>
-            <h5>1.2 Open the Arduino IDE and open the Blink sketch from the Arduino Examples.</h5>
-            <img src="./public/task1_try_blink.png" alt="task1_try_blink">
-            <p>Now we will test our arduino by using the Blink sketch example from arduino.</p>
-        </div>
-        <div>
-            <h5>1.3 Select an Arduino board as the target, such as Arduino Uno or Nano.</h5>
-            <p>Now we need to specify the arduino board that we use the board that I used is Arduino Uno. Then we have to specific the port that 
-                we connected also.
-            </p>
-        </div>
-        <div>
-            <h5>1.4 Build the Arduino sketch example.</h5>
-            <img src="./public/building_blink.png" alt="building_blink">
-            <p>This step is to build and verify the code that we will upload to our arduino. You can click the verify button above to build 
-                our code.
-            </p>
-        </div>
-        <div>
-            <h5>1.6 Upload the compiled Arduino sketch to the Arduino board.</h5>
-            <video width="100%" height="auto" controls="controls">
-                <source src="./public/task1_blink_result.mp4" type="video/mp4">
-            </video>
-            <p>Now this is the last step. It is when we upload our code to the arduino board. Simply just click the upload button the button 
-                that look like arrow that pointing to the right. Now if nothing wrong our arduino board show have some orange LED that are 
-                blinking !
-            </p>
-        </div>
-
-    </div><br><br>
-    <div>
-        <h3>Task 2: Installation of VS Code IDE software and extensions</h3>
-        <div>
-            <h5>2.1 Install VS Code IDE for Windows (Host OS).</h5>
-            <img src="./public/downloading_vscode.png" alt="Downloading vscode">
-            <p>Download vscode for remote to our vm ware for coding our adruino board.</p>
-        </div>
-        <div>
-            <h5>2.2 Install the Remote Development Extension Pack for VS Code IDE.</h5>
-            <img src="./public/remote_dev_install.png" alt="remote_dev_install">
-            <p>Download the extension for remoting the vmware.</p>
-        </div>
-        <div>
-            <h5>2.3 Connect VS Code to the remote machine (Ubuntu).</h5>
-            <img src="./public/setting_bridge_network.png" alt="setting_bridge_network">
-            <p>First we need to config our vmware network to use bridge network to allow it to make some lan connecting.</p>
-            <img src="./public/create_ssh_connection.png" alt="create_ssh_connection">
-            <p>First we have to create our ssh connection to connected to our vmware.</p>
-            <img src="./public/remote_connected.png" alt="remote_connected">
-            <p>Now we are connected we should see that our terminal change to the vmware already.</p>
-        </div>
-        <div>
-            <h5>2.4 Install the PlatformIO extension for Remote Development.</h5>
-            <img src="./public/platformio_install.png" alt="platformio_install">
-            <p>The next step is to download the PlatformIO extension it allow us to write some arduino code in vscode.</p>
-        </div>
-        <div>
-            <h5>2.5 Create a project using PlatformIO and the Arduino framework</h5>
-            <img src="./public/init_pio_project.png" alt="init_pio_project">
-            <p>Now we have to create our project with the platformIO by use the command `pio project init --board uno`</p>
-            <img src="./public/success_init.png" alt="success_init">
-            <p>If it is success we should see that it create folder for us. If we want to sketch some arduino code go to the src folder 
-                and now you can create some .cpp file that will be the arduino code.
-            </p>
-        </div>
-        <div>
-            <h5>2.6 Build the Arduino sketch and upload it to the target.</h5>
-            <img src="./public/verify_blink_code.png" alt="verify_blink_code">
-            <p>Same as task 1 when we finish writting some code we have to build and verify it by cliking the build button below. It should 
-                say SUCCESS in the terminal. Now we ready to upload it.
-            </p>
+        
+        <div class="task">
+            <h3>Task 2: Installation of VS Code IDE software and extensions</h3>
+            <div>
+                <h5>2.1 Install VS Code IDE for Windows (Host OS)</h5>
+                <img src="./public/downloading_vscode.png" alt="Downloading vscode">
+                <p>Download VS Code to remotely access your VMware for coding your Arduino board.</p>
+            </div>
+            <div>
+                <h5>2.2 Install the Remote Development Extension Pack for VS Code IDE</h5>
+                <img src="./public/remote_dev_install.png" alt="remote_dev_install">
+                <p>Download the extension for remote access to VMware.</p>
+            </div>
+            <div>
+                <h5>2.3 Connect VS Code to the remote machine (Ubuntu)</h5>
+                <img src="./public/setting_bridge_network.png" alt="setting_bridge_network">
+                <p>Configure your VMware network to use a bridge network for LAN connectivity.</p>
+                <img src="./public/create_ssh_connection.png" alt="create_ssh_connection">
+                <p>Create an SSH connection to connect to your VMware.</p>
+                <img src="./public/remote_connected.png" alt="remote_connected">
+                <p>Once connected, your terminal should switch to the VMware environment.</p>
+            </div>
+            <div>
+                <h5>2.4 Install the PlatformIO extension for Remote Development</h5>
+                <img src="./public/platformio_install.png" alt="platformio_install">
+                <p>Download the PlatformIO extension to write Arduino code in VS Code.</p>
+                <img src="./public/PIO_problem.png" alt="PIO_problem">
+                <p>You might face an issue where the PIO home page isn't visible because the port settings of VS Code in Linux and the default port of PIO home differ. To workaround, I created the project and performed tasks via the command prompt.</p>
+            </div>
+            <div>
+                <h5>2.5 Create a project using PlatformIO and the Arduino framework</h5>
+                <img src="./public/init_pio_project.png" alt="init_pio_project">
+                <p>Create your project with PlatformIO using the command <code>pio project init --board uno</code>.</p>
+                <img src="./public/success_init.png" alt="success_init">
+                <p>If successful, a folder will be created for you. To sketch Arduino code, go to the <code>src</code> folder and create a <code>.cpp</code> file for your Arduino code.</p>
+            </div>
+            <div>
+                <h5>2.6 Build the Arduino sketch and upload it to the target</h5>
+                <img src="./public/verify_blink_code.png" alt="verify_blink_code">
+                <p>After writing your code, build and verify it by clicking the build button. It should say SUCCESS in the terminal. Now, you're ready to upload it.</p>
+                <img src="./public/upload_success.png" alt="upload_success">
+                <p>When the upload is successful, the orange light on the Arduino should start blinking!</p>
+                <video width="700" height="500" controls="controls">
+                    <source src="./public/task1_blink_result.mp4" type="video/mp4">
+            </div>
         </div>
     </div>
-
-
 </body>
 </html>
